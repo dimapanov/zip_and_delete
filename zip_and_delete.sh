@@ -6,7 +6,7 @@ total_size_before=$(du -sh . --exclude='.*' | cut -f1)
 # Find all files (not directories) in the current directory and subdirectories
 find . -type f -exec sh -c '
     for file do
-        # Zip each file without including directory structure (-j) and
+        # Zip each file without including directory structure (-j) and 
         # remove the original file if zipping was successful
         zip -j "${file}.zip" "${file}" && rm -f "${file}"
     done
