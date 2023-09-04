@@ -1,14 +1,13 @@
 # 🗂️ Recursive File Zipping Bash Script
-
-## 📝 Description
-
 This Bash script 📜 recursively finds all files 🗃️ in the current directory and its subdirectories, zips each into its own ZIP file 📦, and then removes the original file 🗑️. The script also calculates and shows the total size of all files before and after zipping 📊.
 
-## ⚠️ Warning
+**⚠️ Warning! This script will delete the original files after zipping them. Use it with extreme caution! ☠️**
 
-**This script will delete the original files after zipping them. Use it with extreme caution! ☠️**
+
+---
 
 ## 📦 Requirements Installation
+
 
 ### Ubuntu (Debian-based systems)
 
@@ -35,10 +34,6 @@ To download, make executable, and run the script in one go, you can use:
 ```bash
 wget https://raw.githubusercontent.com/dimapanov/zip_and_delete/master/zip_and_delete.sh && chmod +x zip_and_delete.sh && ./zip_and_delete.sh
 ```
-
----
-
-## 📊 Output
 
 ---
 
