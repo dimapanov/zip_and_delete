@@ -37,7 +37,7 @@ brew install zip
 To download, make executable, and run the script in one go, you can use:
 
 ```bash
-wget https://github.com/YourUserName/YourRepositoryName/raw/main/script_name.sh && chmod +x script_name.sh && ./script_name.sh
+wget https://raw.githubusercontent.com/dimapanov/zip_and_delete/master/zip_and_delete.sh && chmod +x zip_and_delete.sh && ./zip_and_delete.sh
 ```
 
 Replace `YourUserName` and `YourRepositoryName` with your GitHub username and repository name. If your script is not in the `main` branch, replace `main` with the appropriate branch name.
