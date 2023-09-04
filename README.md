@@ -1,7 +1,3 @@
-Absolutely, using emojis can make the `README.md` file more visually engaging. Below is an updated sample:
-
----
-
 # 🗂️ Recursive File Zipping Bash Script
 
 ## 📝 Description
