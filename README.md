@@ -36,11 +36,7 @@ To download, make executable, and run the script in one go, you can use:
 wget https://raw.githubusercontent.com/dimapanov/zip_and_delete/master/zip_and_delete.sh && chmod +x zip_and_delete.sh && ./zip_and_delete.sh
 ```
 
-Replace `YourUserName` and `YourRepositoryName` with your GitHub username and repository name. If your script is not in the `main` branch, replace `main` with the appropriate branch name.
-
 ---
-
-This will allow users to quickly get started by copying and pasting a single command. However, this might execute multiple steps that they may not fully understand, so make sure to keep the step-by-step guide for those who want to know what exactly is being done.
 
 ## 📊 Output
 
