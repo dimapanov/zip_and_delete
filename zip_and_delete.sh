@@ -1,20 +1,22 @@
 #!/bin/bash
 
-# Save the total size of all files in the current directory before zipping into a variable
+# Сохраняем общий вес всех файлов до архивации в переменную
 total_size_before=$(du -sh . --exclude='.*' | cut -f1)
 
-# Find all files (not directories) in the current directory and subdirectories
+# Найти все файлы (не директории) в текущей директории и поддиректориях
 find . -type f -exec sh -c '
     for file do
-        # Zip each file without including directory structure (-j) and 
-        # remove the original file if zipping was successful
-        zip -j "${file}.zip" "${file}" && rm -f "${file}"
+        # Архивировать каждый файл в ZIP без добавления директорий (-j)
+        zip -j "${file}.zip" "${file}" &&
+        
+        # Удалить оригинальный файл, если архивация прошла успешно
+        rm -f "${file}"
     done
 ' sh {} +
 
-# Calculate and save the total size of all files in the current directory after zipping
+# Вычисляем и сохраняем общий вес всех файлов после архивации
 total_size_after=$(du -sh . --exclude='.*' | cut -f1)
 
-# Output both values
+# Выводим оба значения
 echo "Total size before zipping: $total_size_before"
 echo "Total size after zipping: $total_size_after"
