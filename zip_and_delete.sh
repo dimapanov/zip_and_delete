@@ -1,18 +1,34 @@
 #!/bin/bash
 
-# Сохраняем общий вес всех файлов до архивации в переменную
-total_size_before=$(du -sch * .[^.]* ..?* | grep 'Итого' | cut -f1) # 'Итого' может измениться в зависимости от локали
+# Получаем список всех файлов в текущей директории и поддиректориях
+all_files=$(find . -type f)
 
-# Найти все файлы (не директории) в текущей директории и поддиректориях и архивировать их
+# Считаем общий размер всех файлов до архивации
+total_size_before=0
+for file in $all_files; do
+    size=$(stat -c %s "$file")
+    total_size_before=$((total_size_before + size))
+done
+total_size_before=$(numfmt --to=iec $total_size_before)
+
+# Архивация всех файлов
 find . -type f -exec sh -c '
     for file do
         zip -j "${file}.zip" "${file}" && rm -f "${file}"
     done
 ' sh {} +
 
-# Вычисляем и сохраняем общий вес всех файлов после архивации
-total_size_after=$(du -sch * .[^.]* ..?* | grep 'Итого' | cut -f1) # 'Итого' может измениться в зависимости от локали
+# Получаем список всех файлов в текущей директории и поддиректориях после архивации
+all_files=$(find . -type f)
 
-# Выводим оба значения
+# Считаем общий размер всех файлов после архивации
+total_size_after=0
+for file in $all_files; do
+    size=$(stat -c %s "$file")
+    total_size_after=$((total_size_after + size))
+done
+total_size_after=$(numfmt --to=iec $total_size_after)
+
+# Выводим результаты
 echo "Total size before zipping: $total_size_before"
 echo "Total size after zipping: $total_size_after"
