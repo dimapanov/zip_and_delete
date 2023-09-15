@@ -1,5 +1,5 @@
-# 🗂️ Recursive File Zipping Bash Script
-This Bash script 📜 recursively finds all files 🗃️ in the current directory and its subdirectories, zips each into its own ZIP file 📦, and then removes the original file 🗑️. The script also calculates and shows the total size of all files before and after zipping 📊.
+# Recursive File Zipping Bash Script
+This Bash script  recursively finds all files  in the current directory and its subdirectories, zips each into its own ZIP file , and then removes the original file.
 
 **⚠️ Warning! This script will delete the original files after zipping them. Use it with extreme caution! ☠️**
 
